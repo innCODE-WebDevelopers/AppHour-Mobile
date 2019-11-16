@@ -10,9 +10,16 @@ import {
 import {Footer, StepOne, StepTwo, Touch} from './styles';
 import Background from '../../../assets/image/background.gif';
 
-const Main = () => {
+const Main = ({navigation}) => {
   const [register, setRegister] = useState(false);
-
+  const acessOrRegister = state => {
+    if (state) {
+      navigation.navigate('Slider');
+    }
+    if (!state) {
+      return;
+    }
+  };
   return (
     <BackgroundImage source={Background}>
       <Title>AppHour</Title>
@@ -24,7 +31,7 @@ const Main = () => {
             keyboardType={'email-address'}
           />
           <Input pass={true} placeholder={'password'} />
-          <Button>
+          <Button onPress={() => acessOrRegister(true)}>
             <TextAll>Acessar</TextAll>
           </Button>
           <Footer>
@@ -49,7 +56,7 @@ const Main = () => {
           />
           <Input pass={true} placeholder={'Create your password'} />
           <Input pass={true} placeholder={'Confirm your password'} />
-          <Button>
+          <Button onPress={() => acessOrRegister(false)}>
             <TextAll>Register</TextAll>
           </Button>
           <Footer>
