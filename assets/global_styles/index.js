@@ -19,20 +19,15 @@ export const Button = styled(RectButton)`
   height: 40px;
   align-items: center;
   justify-content: center
-  background-color: #f7ca18;
+  background-color: #9980FA;
   border-radius: 5px;
 `;
 export const TextAll = styled.Text`
+  font-family: ${props => (props.font ? props.font : 'system font')}
   color: ${props => (props.color ? props.color : '#000')};
   text-decoration: ${props => (props.underline ? 'underline' : 'none')};
   font-size: ${props => (props.size ? props.size : '15px')};
   margin-left: ${props => (props.left ? props.left : '0px')};
-`;
-
-export const Title = styled.Text`
-  color: #fff;
-  font-size: 30px;
-  margin-top: 20%;
 `;
 
 export const Input = styled.TextInput.attrs(props => ({

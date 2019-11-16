@@ -2,12 +2,11 @@ import React, {useState} from 'react';
 import {Alert} from 'react-native';
 import {
   Button,
-  Title,
   BackgroundImage,
   TextAll,
   Input,
 } from '../../../assets/global_styles';
-import {Footer, StepOne, StepTwo, Touch} from './styles';
+import {Footer, StepOne, StepTwo, Touch, Title} from './styles';
 import Background from '../../../assets/image/background.gif';
 
 const Main = ({navigation}) => {
@@ -32,7 +31,7 @@ const Main = ({navigation}) => {
           />
           <Input pass={true} placeholder={'password'} />
           <Button onPress={() => acessOrRegister(true)}>
-            <TextAll>Acessar</TextAll>
+            <TextAll color={'#fff'}>Acessar</TextAll>
           </Button>
           <Footer>
             <TextAll color={'#fff'}>Dont' have you account</TextAll>
@@ -57,7 +56,7 @@ const Main = ({navigation}) => {
           <Input pass={true} placeholder={'Create your password'} />
           <Input pass={true} placeholder={'Confirm your password'} />
           <Button onPress={() => acessOrRegister(false)}>
-            <TextAll>Register</TextAll>
+            <TextAll color={'#fff'}>Register</TextAll>
           </Button>
           <Footer>
             <TextAll color={'#fff'}>I'm already registered</TextAll>

@@ -21,3 +21,10 @@ export const StepTwo = styled.View`
   flex: 1;
   align-items: center;
 `;
+
+export const Title = styled.Text`
+  color: #fff;
+  font-size: 65px;
+  margin-top: 20%;
+  font-family: Blank Smile;
+`;
