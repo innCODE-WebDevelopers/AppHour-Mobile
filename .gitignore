@@ -57,3 +57,21 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+android/
+ios/
+__tests__
+
+LICENSE
+Documentos
+Documentos.pub
+metro.config.js
+.prettierrc.js
+.gitignore
+.watchmanconfig
+.gitattributes
+.flowconfig
+.eslintrc.json
+.eslintrc.js
+.editorconfig
+.buckconfig
