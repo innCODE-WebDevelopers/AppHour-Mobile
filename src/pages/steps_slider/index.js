@@ -49,7 +49,7 @@ const slides = [
   },
 ];
 
-const slide = () => {
+const slide = ({navigation}) => {
   const _renderNextButton = () => {
     return (
       <Button>
@@ -70,6 +70,7 @@ const slide = () => {
           color="rgba(255, 255, 255, .9)"
           size={24}
           style={{backgroundColor: 'transparent'}}
+          onPress={() => navigation.navigate('Dashboard')}
         />
       </Button>
     );

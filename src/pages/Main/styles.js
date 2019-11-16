@@ -1,3 +1,4 @@
+import {Platform} from 'react-native';
 import styled from 'styled-components/native';
 
 export const Touch = styled.TouchableOpacity``;
@@ -8,14 +9,20 @@ export const Footer = styled.View`
   flex-direction: row;
 `;
 
-export const StepOne = styled.View`
+export const StepOne = styled.KeyboardAvoidingView.attrs({
+  enabled: Platform.OS === 'ios',
+  behavior: 'padding',
+})`
   margin-top: 30%;
   display: ${props => (!props.register ? 'flex' : 'none')};
   flex: 1;
   align-items: center;
 `;
 
-export const StepTwo = styled.View`
+export const StepTwo = styled.KeyboardAvoidingView.attrs({
+  enabled: Platform.OS === 'ios',
+  behavior: 'padding',
+})`
   margin-top: 30%;
   display: ${props => (props.register ? 'flex' : 'none')};
   flex: 1;
