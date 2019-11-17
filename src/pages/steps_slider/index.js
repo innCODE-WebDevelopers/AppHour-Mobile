@@ -70,7 +70,7 @@ const slide = ({navigation}) => {
           color="rgba(255, 255, 255, .9)"
           size={24}
           style={{backgroundColor: 'transparent'}}
-          onPress={() => navigation.navigate('Dashboard')}
+          onPress={() => navigation.navigate('Maps')}
         />
       </Button>
     );

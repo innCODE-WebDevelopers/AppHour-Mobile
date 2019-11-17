@@ -11,20 +11,32 @@ import Menu from '~/pages/Menu';
 import Main from '~/pages/Main';
 import Slider from '~/pages/steps_slider';
 
-import Dashboard from '~/pages/Dashboard';
-import Account from '~/pages/Account';
+import Maps from '~/pages/Dashboard/Maps';
+import Account from '~/pages/Dashboard/Account';
+import Events from '~/pages/Dashboard/Events';
+import Favorite from '~/pages/Dashboard/Favorite';
+import Feed from '~/pages/Dashboard/Feed';
+import Friends from '~/pages/Dashboard/Friends';
 
 const Routes = createAppContainer(
   createSwitchNavigator({
+    Sign: createSwitchNavigator({
+      Main,
+      Slider,
+    }),
     App: createDrawerNavigator(
       {
-        Dashboard,
+        Maps,
+        Friends,
+        Feed,
+        Events,
+        Favorite,
         Account,
       },
       {
         drawerWidth: 180,
         contentComponent: Menu,
-        initialRouteName: 'Dashboard',
+        initialRouteName: 'Maps',
         animationEnabled: true,
         contentOptions: {
           activeTintColor: '#fff',
@@ -36,10 +48,6 @@ const Routes = createAppContainer(
         },
       },
     ),
-    Sign: createSwitchNavigator({
-      Main,
-      Slider,
-    }),
   }),
 );
 

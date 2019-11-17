@@ -2,9 +2,9 @@ import React from 'react';
 import {View} from 'react-native';
 
 import {Linear, Container} from './styles';
-import {TextAll} from '../../../assets/global_styles';
+import {TextAll} from '../../../../assets/global_styles';
 
-export default function Dashboard() {
+export default function Maps() {
   return (
     <Container>
       <Linear color={'#49388a'}>
@@ -15,6 +15,6 @@ export default function Dashboard() {
     </Container>
   );
 }
-Dashboard.navigationOptions = {
+Maps.navigationOptions = {
   drawerLabel: 'Maps',
 };

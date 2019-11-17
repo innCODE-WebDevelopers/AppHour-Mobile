@@ -4,6 +4,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import {RectButton} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
+import avatar from '../../../assets/image/avatar.jpg';
+
 export const Container = styled.View`
   flex: 1;
 `;
@@ -17,6 +19,18 @@ export const TopView = styled.View`
   justify-content: center;
   align-items: center;
   height: 20%;
+  background-color: #fff
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  flex-direction: column;
+`;
+
+export const Avatar = styled.Image.attrs(props => ({
+  source: props.avatar ? props.avatar : avatar,
+}))`
+  width: ${props => (props.widht ? props.widht : '50px')}
+  height: ${props => (props.height ? props.height : '50px')}
+  border-radius: ${props => (props.radius ? props.radius : '25px')}
 `;
 
 export const OutsideView = styled.View`
@@ -29,13 +43,15 @@ export const InternalView = styled.View`
   flex-direction: row;
 `;
 export const ViewButtom = styled.View`
-  margin-top: 2px;
+  margin-top: ${props => (props.top ? props.top : '2px')};
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
 `;
 
 export const Button = styled(RectButton)`
   width: 100%;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.2);
+
   justify-content: center;
 `;
 
