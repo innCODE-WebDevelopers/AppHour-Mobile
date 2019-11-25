@@ -20,10 +20,6 @@ import Friends from '~/pages/Dashboard/Friends';
 
 const Routes = createAppContainer(
   createSwitchNavigator({
-    Sign: createSwitchNavigator({
-      Main,
-      Slider,
-    }),
     App: createDrawerNavigator(
       {
         Maps,
@@ -48,6 +44,10 @@ const Routes = createAppContainer(
         },
       },
     ),
+    Sign: createSwitchNavigator({
+      Main,
+      Slider,
+    }),
   }),
 );
 
