@@ -10,18 +10,17 @@ export const Container = styled.View`
   flex: 1;
 `;
 export const Linear = styled(LinearGradient).attrs(props => ({
-  colors: [props.color, darken(0.1, props.color)],
+  colors: props.color,
 }))`
   flex: 1;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const TopView = styled.View`
   justify-content: center;
   align-items: center;
   height: 20%;
-  background-color: #fff
-  border-bottom-width: 1px;
-  border-bottom-color: rgba(255, 255, 255, 0.2);
   flex-direction: column;
 `;
 
@@ -39,19 +38,19 @@ export const OutsideView = styled.View`
 `;
 
 export const InternalView = styled.View`
-  padding-left: 15px;
   flex-direction: row;
+  justify-content: center;
 `;
 export const ViewButtom = styled.View`
   margin-top: ${props => (props.top ? props.top : '2px')};
   border-bottom-width: 1px;
-  border-bottom-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: ${props =>
+    props.ColorBottom ? props.ColorBottom : 'transparent'};
 `;
 
 export const Button = styled(RectButton)`
   width: 100%;
   height: 50px;
-
   justify-content: center;
 `;
 

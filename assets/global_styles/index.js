@@ -28,7 +28,7 @@ export const Button = styled(RectButton)`
   border-radius: 5px;
 `;
 export const TextAll = styled.Text`
-  font-weight : ${props => (props.weight ? props.weight : 'normal')}
+  font-weight : ${props => (props.weight ? 'bold' : 'normal')}
   font-family: ${props => (props.font ? props.font : 'system font')}
   color: ${props => (props.color ? props.color : '#000')};
   text-decoration: ${props => (props.underline ? 'underline' : 'none')};

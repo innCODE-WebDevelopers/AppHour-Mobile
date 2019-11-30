@@ -1,5 +1,5 @@
 import React from 'react';
-import LinearGradient from 'react-native-linear-gradient';
+import {Dimensions} from 'react-native';
 import {
   createAppContainer,
   createSwitchNavigator,
@@ -18,6 +18,8 @@ import Favorite from '~/pages/Dashboard/Favorite';
 import Feed from '~/pages/Dashboard/Feed';
 import Friends from '~/pages/Dashboard/Friends';
 
+const Width = Math.round(Dimensions.get('window').width);
+
 const Routes = createAppContainer(
   createSwitchNavigator({
     App: createDrawerNavigator(
@@ -30,7 +32,7 @@ const Routes = createAppContainer(
         Account,
       },
       {
-        drawerWidth: 180,
+        drawerWidth: Width,
         contentComponent: Menu,
         initialRouteName: 'Maps',
         animationEnabled: true,

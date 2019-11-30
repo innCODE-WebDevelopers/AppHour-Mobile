@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 
 import {NavigationActions} from 'react-navigation';
 
@@ -15,110 +15,138 @@ import {
 } from './styles';
 import {TextAll} from '../../../assets/global_styles';
 
-export default class Menu extends Component {
-  navigateToScreen = route => () => {
+const Menu = ({navigation}) => {
+  const [boldText, setBold] = useState('Maps');
+  const navigateToScreen = route => () => {
     const navigateAction = NavigationActions.navigate({
       routeName: route,
     });
-    if (route === 'Home') {
-      this.props.navigation.closeDrawer();
-      this.props.navigation.dispatch(navigateAction);
+    setBold(route);
+    if (route === 'Maps') {
+      navigation.closeDrawer();
+      navigation.dispatch(navigateAction);
     } else {
-      this.props.navigation.dispatch(navigateAction);
+      navigation.dispatch(navigateAction);
     }
   };
+  return (
+    <Container>
+      <Linear
+        color={['#C93B7A', '#9F3384', '#7D419A']}
+        start={{x: 1, y: 0}}
+        end={{x: 0, y: 1}}>
+        <TopView>
+          <Avatar />
+          <TextAll top={10} font={'Roboto-Light'} color={'#fff'}>
+            Wellcome Kelvin R.C
+          </TextAll>
+        </TopView>
 
-  render() {
-    return (
-      <Container>
-        <Linear color={'#9980FA'}>
-          <TopView>
-            <Avatar />
-            <TextAll font={'Roboto-Light'} color={'#000'}>
-              Wellcome
-            </TextAll>
-          </TopView>
+        <OutsideView>
+          <ViewButtom>
+            <Button onPress={navigateToScreen('Maps')}>
+              <InternalView>
+                {/* <Icons name={'location-city'} size={24} color="#fff" /> */}
+                <TextAll
+                  weight={boldText === 'Maps' ? true : false}
+                  size={20}
+                  font={'Roboto-Light'}
+                  color={'#fff'}>
+                  Maps
+                </TextAll>
+              </InternalView>
+            </Button>
+          </ViewButtom>
 
-          <OutsideView>
-            <ViewButtom>
-              <Button onPress={this.navigateToScreen('Maps')}>
-                <InternalView>
-                  <Icons name={'location-city'} size={25} color="#130f40" />
-                  <TextAll font={'NunitoSans-SemiBold'} color={'#fff'}>
-                    Maps
-                  </TextAll>
-                </InternalView>
-              </Button>
-            </ViewButtom>
+          <ViewButtom>
+            <Button onPress={navigateToScreen('Friends')}>
+              <InternalView>
+                {/* <Icons name={'group'} size={24} color="#fff" /> */}
+                <TextAll
+                  weight={boldText === 'Friends' ? true : false}
+                  size={20}
+                  font={'Roboto-Light'}
+                  color={'#fff'}>
+                  My Friends
+                </TextAll>
+              </InternalView>
+            </Button>
+          </ViewButtom>
 
-            <ViewButtom>
-              <Button onPress={this.navigateToScreen('Friends')}>
-                <InternalView>
-                  <Icons name={'group'} size={25} color="#74b9ff" />
-                  <TextAll font={'NunitoSans-SemiBold'} color={'#fff'}>
-                    Friends
-                  </TextAll>
-                </InternalView>
-              </Button>
-            </ViewButtom>
+          <ViewButtom>
+            <Button onPress={navigateToScreen('Feed')}>
+              <InternalView>
+                {/* <Icons name={'insert-comment'} size={24} color="#fff" /> */}
+                <TextAll
+                  weight={boldText === 'Feed' ? true : false}
+                  size={20}
+                  font={'Roboto-Light'}
+                  color={'#fff'}>
+                  Feed
+                </TextAll>
+              </InternalView>
+            </Button>
+          </ViewButtom>
 
-            <ViewButtom>
-              <Button onPress={this.navigateToScreen('Feed')}>
-                <InternalView>
-                  <Icons name={'insert-comment'} size={25} color="#c7ecee" />
-                  <TextAll font={'NunitoSans-SemiBold'} color={'#fff'}>
-                    Feed
-                  </TextAll>
-                </InternalView>
-              </Button>
-            </ViewButtom>
+          <ViewButtom>
+            <Button onPress={navigateToScreen('Events')}>
+              <InternalView>
+                {/* <Icons name={'local-bar'} size={24} color="#fff" /> */}
+                <TextAll
+                  weight={boldText === 'Events' ? true : false}
+                  size={20}
+                  font={'Roboto-Light'}
+                  color={'#fff'}>
+                  Events
+                </TextAll>
+              </InternalView>
+            </Button>
+          </ViewButtom>
 
-            <ViewButtom>
-              <Button onPress={this.navigateToScreen('Events')}>
-                <InternalView>
-                  <Icons name={'local-bar'} size={25} color="#f9ca24" />
-                  <TextAll font={'NunitoSans-SemiBold'} color={'#fff'}>
-                    Events
-                  </TextAll>
-                </InternalView>
-              </Button>
-            </ViewButtom>
+          <ViewButtom>
+            <Button onPress={navigateToScreen('Favorite')}>
+              <InternalView>
+                {/* <Icons name={'favorite'} size={24} color="#fff" /> */}
+                <TextAll
+                  weight={boldText === 'Favorite' ? true : false}
+                  size={20}
+                  font={'Roboto-Light'}
+                  color={'#fff'}>
+                  Favorite
+                </TextAll>
+              </InternalView>
+            </Button>
+          </ViewButtom>
 
-            <ViewButtom>
-              <Button onPress={this.navigateToScreen('Favorite')}>
-                <InternalView>
-                  <Icons name={'favorite'} size={25} color="#d63031" />
-                  <TextAll font={'NunitoSans-SemiBold'} color={'#fff'}>
-                    Favorite
-                  </TextAll>
-                </InternalView>
-              </Button>
-            </ViewButtom>
+          <ViewButtom>
+            <Button onPress={navigateToScreen('Account')}>
+              <InternalView>
+                {/* <Icons name={'settings'} size={24} color="#fff" /> */}
+                <TextAll
+                  weight={boldText === 'Account' ? true : false}
+                  size={20}
+                  font={'Roboto-Light'}
+                  color={'#fff'}>
+                  Account
+                </TextAll>
+              </InternalView>
+            </Button>
+          </ViewButtom>
 
-            <ViewButtom>
-              <Button onPress={this.navigateToScreen('Account')}>
-                <InternalView>
-                  <Icons name={'settings'} size={25} color="#CCC" />
-                  <TextAll font={'NunitoSans-SemiBold'} color={'#fff'}>
-                    Account
-                  </TextAll>
-                </InternalView>
-              </Button>
-            </ViewButtom>
+          <ViewButtom top={68}>
+            <Button onPress={navigateToScreen('Main')}>
+              <InternalView>
+                {/* <Icons name={'keyboard-backspace'} size={24} color="#fff" /> */}
+                <TextAll size={20} font={'Roboto-Light'} color={'#fff'}>
+                  logout
+                </TextAll>
+              </InternalView>
+            </Button>
+          </ViewButtom>
+        </OutsideView>
+      </Linear>
+    </Container>
+  );
+};
 
-            <ViewButtom top={72}>
-              <Button onPress={this.navigateToScreen('Account')}>
-                <InternalView>
-                  <Icons name={'keyboard-backspace'} size={25} color="#fff" />
-                  <TextAll font={'NunitoSans-SemiBold'} color={'#fff'}>
-                    logout
-                  </TextAll>
-                </InternalView>
-              </Button>
-            </ViewButtom>
-          </OutsideView>
-        </Linear>
-      </Container>
-    );
-  }
-}
+export default Menu;

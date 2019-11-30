@@ -16,7 +16,7 @@ const slides = [
     key: '1',
     title: 'Wellcome',
     text: 'Discover new exclusive drinks',
-    backgroundColor: '#9980FA',
+    backgroundColor: '#1A1E2A',
     color: '#fff',
     Image: stepOne,
     size: {
@@ -28,7 +28,7 @@ const slides = [
     key: '2',
     title: 'Imagine',
     text: 'See all events near you',
-    backgroundColor: '#9980FA',
+    backgroundColor: '#1A1E2A',
     color: '#fff',
     Image: map,
     size: {
@@ -39,7 +39,7 @@ const slides = [
     key: '3',
     title: 'Facilitator',
     text: "Don't waste time in lines",
-    backgroundColor: '#9980FA',
+    backgroundColor: '#1A1E2A',
     color: '#fff',
     Image: payment,
     size: {
@@ -80,9 +80,6 @@ const slide = ({navigation}) => {
       <Container>
         <Linear color={item.backgroundColor}>
           <InternalView>
-            <TextAll color={item.color} font={'NunitoSans-SemiBold'} size={30}>
-              {item.title}
-            </TextAll>
             <Lottie
               style={item.size}
               source={item.Image}
@@ -90,7 +87,14 @@ const slide = ({navigation}) => {
               autoPlay
               loop
             />
-            <TextAll color={item.color} font={'Roboto-Light'} size={20}>
+            <TextAll color={item.color} font={'NunitoSans-SemiBold'} size={30}>
+              {item.title}
+            </TextAll>
+            <TextAll
+              top={10}
+              color={item.color}
+              font={'Roboto-Light'}
+              size={20}>
               {item.text}
             </TextAll>
           </InternalView>

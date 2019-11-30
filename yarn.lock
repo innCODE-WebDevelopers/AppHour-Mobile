@@ -5626,6 +5626,11 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.10.2.tgz#984120fd4d16800e9a738208ab1fba422d23b5ab"
   integrity sha512-INBT1QEgtcCCgvccr5/86CfD71fw9EPmDxgiJX4I2Ddr6ZsV6iFXsuby+qWJPtmNuMY0zByTsG4468P7nHuNWA==
 
+react-native-android-location-enabler@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-android-location-enabler/-/react-native-android-location-enabler-1.2.0.tgz#82ddf9743b257360c94647243d92497960005adc"
+  integrity sha512-9NGhjkfU5RMmBjSS2Rd2yYj9TBJNPhgXySo/FrDWAtN+137eN3F/KkOtEE5JFWzqGmBqp3GyEufCCOJf59R37w==
+
 react-native-app-intro-slider@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-native-app-intro-slider/-/react-native-app-intro-slider-3.0.0.tgz#c3620b967503ce410b3d767252392bb6fb2edf97"

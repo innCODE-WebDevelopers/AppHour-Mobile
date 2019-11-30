@@ -46,3 +46,35 @@ export const ViewButtom = styled.View`
   margin-left: -90%;
   margin-top: 5%;
 `;
+
+export const ModalView = styled.Modal.attrs(props => ({
+  visible: props.visible,
+  animationType: props.animationType,
+  onRequestClose: props.onRequestClose,
+  transparent: props.transparent,
+}))`
+  width: 40px;
+  height: 40px;
+`;
+
+export const ModalContainer = styled.View`
+  background-color: #fff;
+  height: 40%;
+  width: 90%;
+  margin-left: 20px;
+  margin-top: 60%;
+  border-radius: 20px;
+`;
+
+export const ViewButton = styled.View`
+  align-items: flex-end;
+`;
+
+export const ButtonClose = styled(RectButton)`
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Touch = styled.TouchableOpacity``;
