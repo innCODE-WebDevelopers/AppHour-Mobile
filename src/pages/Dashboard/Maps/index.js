@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {ActivityIndicator, StyleSheet, View, Text, Button} from 'react-native';
-import MapView, {Marker} from 'react-native-maps';
+import {ActivityIndicator, StyleSheet} from 'react-native';
+import MapView from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import RNAndroidLocationEnabler from 'react-native-android-location-enabler';
 
@@ -8,21 +8,41 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {IconButton, Container, ViewButtom} from './styles';
 import {customStyle} from './customStylesMap';
 
-import {TextAll} from '../../../../assets/global_styles';
-import Rave from '../../../../assets/image/rave.png';
-
-import Modal from './modal';
+import renderPoints from './renderPoints';
 
 export default function Maps({navigation}) {
   const [loading, setLoading] = useState(true);
   const [coordinates, setCoordinates] = useState({});
-  const [modal, setModal] = useState(false);
-  const [dataEvent] = useState({
-    title: 'Evento1',
-    description: 'description event',
-    date_event: '2019-12-25',
-    classification: 4,
-  });
+  const [dataEvent, setEvent] = useState([
+    {
+      id: '123',
+      title: 'House Mix',
+      description: 'event destination on peoples whats, like music eletronic',
+      date_event: '2019-12-25',
+      classification: 4,
+      coords: {latitude: -24.011481, longitude: -46.4087262},
+      modal: false,
+    },
+    {
+      id: '1234',
+      title: 'Matilda bar',
+      description:
+        'Porão de rock sofisticado com bar de coquetéis e gastronomia de petiscos diversos, animado por pocket shows.',
+      date_event: 'Seg a Sex das 18:00 as 04:00',
+      classification: 6,
+      coords: {latitude: -24.0104127, longitude: -46.4065804},
+      modal: false,
+    },
+    {
+      id: '12345',
+      title: 'Casa',
+      description: 'Casa',
+      date_event: '2019-12-25',
+      classification: 6,
+      coords: {latitude: -24.0327051, longitude: -46.5080812},
+      modal: false,
+    },
+  ]);
 
   useEffect(() => {
     RNAndroidLocationEnabler.promptForEnableLocationIfNeeded({
@@ -50,21 +70,6 @@ export default function Maps({navigation}) {
     );
   };
 
-  const renderPoints = () => {
-    return (
-      <Marker
-        key={'123'}
-        coordinate={{
-          latitude: -24.011481,
-          longitude: -46.4087262,
-        }}
-        tooltip
-        onPress={() => setModal(true)}
-        image={Rave}>
-        <Modal modal={modal} setModal={setModal} dataEvent={dataEvent} />
-      </Marker>
-    );
-  };
   return (
     <Container>
       {loading ? (
@@ -72,7 +77,11 @@ export default function Maps({navigation}) {
       ) : (
         <Container>
           <MapView
-            showsUserLocation
+            maxZoomLevel={16}
+            minZoomLevel={13}
+            showsCompass={true}
+            showsPointsOfInterest={false}
+            showsUserLocation={true}
             rotateEnabled={false}
             followsUserLocation={true}
             initialRegion={{
@@ -83,7 +92,7 @@ export default function Maps({navigation}) {
             }}
             style={{...StyleSheet.absoluteFillObject}}
             customMapStyle={customStyle}>
-            {renderPoints()}
+            {renderPoints({dataEvent, setEvent, navigation})}
           </MapView>
           <ViewButtom>
             <IconButton onPress={() => navigation.openDrawer()}>
@@ -98,17 +107,3 @@ export default function Maps({navigation}) {
 Maps.navigationOptions = {
   drawerLabel: 'Maps',
 };
-
-const styles = StyleSheet.create({
-  modalContainer: {
-    backgroundColor: '#fff',
-    height: '40%',
-    width: '90%',
-    marginLeft: 20,
-    marginTop: '60%',
-    borderRadius: 20,
-  },
-  innerContainer: {
-    alignItems: 'center',
-  },
-});

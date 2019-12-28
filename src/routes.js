@@ -4,6 +4,7 @@ import {
   createAppContainer,
   createSwitchNavigator,
   createDrawerNavigator,
+  createBottomTabNavigator,
 } from 'react-navigation';
 
 import Menu from '~/pages/Menu';
@@ -18,6 +19,10 @@ import Favorite from '~/pages/Dashboard/Favorite';
 import Feed from '~/pages/Dashboard/Feed';
 import Friends from '~/pages/Dashboard/Friends';
 
+import EventsMap from '~/pages/Dashboard/Maps/EventsMap';
+import Chat from '~/pages/Dashboard/Maps/EventsMap/chat';
+import Payment from '~/pages/Dashboard/Maps/EventsMap/Payment';
+
 const Width = Math.round(Dimensions.get('window').width);
 
 const Routes = createAppContainer(
@@ -30,6 +35,22 @@ const Routes = createAppContainer(
         Events,
         Favorite,
         Account,
+        Event: createBottomTabNavigator(
+          {
+            EventsMap,
+            Chat,
+            Payment,
+          },
+          {
+            tabBarOptions: {
+              activeTintColor: '#9980FA',
+              inactiveTintColor: '#808080',
+              style: {
+                backgroundColor: '#fff',
+              },
+            },
+          },
+        ),
       },
       {
         drawerWidth: Width,

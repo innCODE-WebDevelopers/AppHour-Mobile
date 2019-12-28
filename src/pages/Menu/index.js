@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 import {NavigationActions} from 'react-navigation';
 
@@ -10,7 +10,6 @@ import {
   OutsideView,
   ViewButtom,
   TopView,
-  Icons,
   Avatar,
 } from './styles';
 import {TextAll} from '../../../assets/global_styles';

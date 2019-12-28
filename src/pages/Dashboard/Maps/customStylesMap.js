@@ -37,7 +37,16 @@ export const customStyle = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#ffffff',
+        visibility: 'off',
+      },
+    ],
+  },
+  {
+    featureType: 'poi',
+    elementType: 'all',
+    stylers: [
+      {
+        visibility: 'off',
       },
     ],
   },
@@ -46,7 +55,25 @@ export const customStyle = [
     elementType: 'geometry',
     stylers: [
       {
-        color: '#263c3f',
+        visibility: 'off',
+      },
+    ],
+  },
+  {
+    featureType: 'poi.school',
+    elementType: 'labels',
+    stylers: [
+      {
+        visibility: 'off',
+      },
+    ],
+  },
+  {
+    featureType: 'poi.school',
+    elementType: 'all',
+    stylers: [
+      {
+        visibility: 'off',
       },
     ],
   },
@@ -55,7 +82,7 @@ export const customStyle = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#6b9a76',
+        visibility: 'off',
       },
     ],
   },
