@@ -1,11 +1,27 @@
 import React, {useState} from 'react';
-import {TouchableOpacity, ScrollView} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import {Container, Linear, ViewTop, ViewHeader, ViewFooter} from './styles';
+import {
+  Container,
+  Linear,
+  ViewTop,
+  ViewHeader,
+  ViewFooter,
+  MessagesView,
+  FriendMessagesView,
+  Avatar,
+  UserName,
+  MessageFriend,
+  MyMessage,
+  MyMessagesView,
+  InputMessage,
+  ViewMessage,
+  ScrollView,
+} from './styles';
 import {TextAll} from '~/../assets/global_styles';
-
+import AvatarIcon from '~/../assets/image/avatar.jpg';
 const Chat = ({navigation}) => {
   return (
     <Linear color={['#171826', '#202334']}>
@@ -25,14 +41,84 @@ const Chat = ({navigation}) => {
 
         <Linear radiusLeft={25} radiusRight={25} color={['#fff', '#fff']}>
           <ViewHeader>
+            <TextAll size={18} font={'NunitoSans-SemiBold'} color={'#171922'}>
+              Event chat
+            </TextAll>
             <ScrollView>
-              <TextAll size={18} font={'NunitoSans-SemiBold'} color={'#171922'}>
-                Event chat
-              </TextAll>
+              <MessagesView>
+                <FriendMessagesView>
+                  <Avatar source={AvatarIcon} />
+                  <UserName>Amigo_Amigo_Amigo :</UserName>
+                </FriendMessagesView>
+
+                <ViewMessage background={'#011f4b'}>
+                  <MessageFriend>
+                    Olá, boa noite a todos, curtem muito e mulheres não
+                    estraguem role dos cara
+                  </MessageFriend>
+                </ViewMessage>
+
+                <MyMessagesView>
+                  <Avatar source={AvatarIcon} />
+                  <UserName>Eu_eu_eu :</UserName>
+                </MyMessagesView>
+                <ViewMessage background={'#005b96 '}>
+                  <MyMessage>
+                    Olá, boa noite a todos, curtem muito e mulheres não
+                    estraguem role dos cara
+                  </MyMessage>
+                </ViewMessage>
+                <FriendMessagesView>
+                  <Avatar source={AvatarIcon} />
+                  <UserName>Amigo_Amigo_Amigo :</UserName>
+                </FriendMessagesView>
+
+                <ViewMessage background={'#011f4b'}>
+                  <MessageFriend>
+                    Olá, boa noite a todos, curtem muito e mulheres não
+                    estraguem role dos cara
+                  </MessageFriend>
+                </ViewMessage>
+
+                <MyMessagesView>
+                  <Avatar source={AvatarIcon} />
+                  <UserName>Eu_eu_eu :</UserName>
+                </MyMessagesView>
+                <ViewMessage background={'#005b96 '}>
+                  <MyMessage>
+                    Olá, boa noite a todos, curtem muito e mulheres não
+                    estraguem role dos cara
+                  </MyMessage>
+                </ViewMessage>
+                <FriendMessagesView>
+                  <Avatar source={AvatarIcon} />
+                  <UserName>Amigo_Amigo_Amigo :</UserName>
+                </FriendMessagesView>
+
+                <ViewMessage background={'#011f4b'}>
+                  <MessageFriend>
+                    Olá, boa noite a todos, curtem muito e mulheres não
+                    estraguem role dos cara
+                  </MessageFriend>
+                </ViewMessage>
+
+                <MyMessagesView>
+                  <Avatar source={AvatarIcon} />
+                  <UserName>Eu_eu_eu :</UserName>
+                </MyMessagesView>
+                <ViewMessage background={'#005b96 '}>
+                  <MyMessage>
+                    Olá, boa noite a todos, curtem muito e mulheres não
+                    estraguem role dos cara
+                  </MyMessage>
+                </ViewMessage>
+              </MessagesView>
             </ScrollView>
           </ViewHeader>
 
-          <ViewFooter />
+          <ViewFooter>
+            <InputMessage placeholder={'Add comments ...'} />
+          </ViewFooter>
         </Linear>
       </Container>
     </Linear>

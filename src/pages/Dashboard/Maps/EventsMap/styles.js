@@ -29,7 +29,7 @@ export const ViewTop = styled.View`
 `;
 
 export const ViewHeader = styled.SafeAreaView`
-  flex: 1;
+  height: 90%;
   padding: 20px;
 `;
 
@@ -59,4 +59,78 @@ export const MenuFooter = styled.View`
   justify-content: space-between;
   height: 50px;
   padding: 11px 15px 0px 15px;
+`;
+
+export const MessagesView = styled.View`
+  flex: 1;
+  flex-direction: column;
+  margin-top: 30px;
+`;
+
+export const FriendMessagesView = styled.View`
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-start;
+`;
+
+export const Avatar = styled.Image.attrs(props => ({
+  source: props.source,
+}))`
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  margin-right: 5px;
+`;
+
+export const UserName = styled.Text`
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 5px;
+`;
+
+export const MessageFriend = styled.Text`
+  margin-top: 6px;
+  margin-left:10px
+  color: #fff;
+  font-size: 13px;
+`;
+
+export const MyMessage = styled.Text`
+  margin-top: 6px;
+  margin-left:10px
+  color: #fff;
+  font-size: 13px;
+`;
+
+export const MyMessagesView = styled.View`
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 15px;
+`;
+
+export const InputMessage = styled.TextInput.attrs(props => ({
+  placeholder: props.placeholder,
+}))`
+  background-color: #dadada;
+  color: #000;
+  width: 90%;
+  height: 35px;
+  border-radius: 4px;
+  padding: 0px 0px 0px 14px;
+`;
+
+export const ViewMessage = styled.View`
+  flex: 1;
+  background-color: ${props => (props.background ? props.background : '#fff')};
+  border-radius: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  margin-left: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+
+export const ScrollView = styled.ScrollView`
+  flex: 1;
 `;
