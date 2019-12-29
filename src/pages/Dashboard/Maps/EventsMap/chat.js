@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {TouchableOpacity} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {TouchableOpacity, Keyboard} from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -19,6 +19,7 @@ import {
   InputMessage,
   ViewMessage,
   ScrollView,
+  ViewButtom,
 } from './styles';
 import {TextAll} from '~/../assets/global_styles';
 import AvatarIcon from '~/../assets/image/avatar.jpg';
@@ -44,8 +45,8 @@ const Chat = ({navigation}) => {
             <TextAll size={18} font={'NunitoSans-SemiBold'} color={'#171922'}>
               Event chat
             </TextAll>
-            <ScrollView>
-              <MessagesView>
+            <MessagesView>
+              <ScrollView>
                 <FriendMessagesView>
                   <Avatar source={AvatarIcon} />
                   <UserName>Amigo_Amigo_Amigo :</UserName>
@@ -109,15 +110,26 @@ const Chat = ({navigation}) => {
                 <ViewMessage background={'#005b96 '}>
                   <MyMessage>
                     Olá, boa noite a todos, curtem muito e mulheres não
-                    estraguem role dos cara
+                    estraguem role dos cara Olá, boa noite a todos, curtem muito
+                    e mulheres não estraguem role dos cara Olá, boa noite a
+                    todos, curtem muito e mulheres não estraguem role dos cara
+                    Olá, boa noite a todos, curtem muito e mulheres não
+                    estraguem role dos cara Olá, boa noite a todos, curtem muito
+                    e mulheres não estraguem role dos cara Olá, boa noite a
+                    todos, curtem muito e mulheres não estraguem role dos cara
                   </MyMessage>
                 </ViewMessage>
-              </MessagesView>
-            </ScrollView>
+              </ScrollView>
+            </MessagesView>
           </ViewHeader>
 
           <ViewFooter>
             <InputMessage placeholder={'Add comments ...'} />
+            <ViewButtom>
+              <TouchableOpacity>
+                <Icon name="send" size={23} color={'#9980FA'} />
+              </TouchableOpacity>
+            </ViewButtom>
           </ViewFooter>
         </Linear>
       </Container>

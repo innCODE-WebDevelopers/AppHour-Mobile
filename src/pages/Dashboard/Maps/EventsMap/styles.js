@@ -48,6 +48,7 @@ export const ViewImage = styled.View`
 
 export const ViewFooter = styled.View`
   flex: 1;
+  flex-direction: row;
   padding: 10px;
   justify-content: flex-end;
 `;
@@ -65,6 +66,12 @@ export const MessagesView = styled.View`
   flex: 1;
   flex-direction: column;
   margin-top: 30px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  shadow-color: #000;
+  shadow-radius: 5px;
+  elevation: 10;
 `;
 
 export const FriendMessagesView = styled.View`
@@ -111,10 +118,11 @@ export const MyMessagesView = styled.View`
 
 export const InputMessage = styled.TextInput.attrs(props => ({
   placeholder: props.placeholder,
+  underlineColorAndroid: 'transparent',
 }))`
   background-color: #dadada;
   color: #000;
-  width: 90%;
+  width: 85%;
   height: 35px;
   border-radius: 4px;
   padding: 0px 0px 0px 14px;
@@ -127,10 +135,19 @@ export const ViewMessage = styled.View`
   padding-right: 10px;
   padding-bottom: 5px;
   margin-left: 4px;
+  margin-right: 4px;
   margin-top: 10px;
   margin-bottom: 10px;
 `;
 
-export const ScrollView = styled.ScrollView`
-  flex: 1;
+export const ScrollView = styled.ScrollView.attrs({
+  showsVerticalScrollIndicator: false,
+})``;
+
+export const ViewButtom = styled.KeyboardAvoidingView.attrs({
+  behavior: 'padding',
+  enabled: true,
+})`
+  margin-left: 10px;
+  padding: 4px;
 `;
